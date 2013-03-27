@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th width="22%"><a href="?sort_by=title">Title</a></th>
+    <th width="37%"><a href="?sort_by=author_id">Author</a></th>
+    <th width="20%"><a href="?sort_by=genre_id">Genre</a></th>
+    <th width="7%"></th>
+    <th width="7%"></th>
+    <th width="7%"></th>
+  </tr>
+
+<% @books.each do |book| %>
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.authors.collect{|author| author.name }.join(', ') %></td>
+    <td><%= book.genre.name %></td>
+    <td><%= link_to 'Show', book %></td>
+    <td><%= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%= link_to 'Comments', {:controller => :comments, :action => :index, :bookId => book.id} %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Book', new_book_path %>

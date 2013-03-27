@@ -1,0 +1,18 @@
+<h1>Comments</h1>
+
+<% unless @comments.first.nil? %>
+  <font size="6"><b>Book</b>: <%= @comments.first.book.title %></font>
+
+  <% @comments.each do |comment| %>
+      <p class="comment"><%= comment.text %></p>
+      <b>User</b>: <%= comment.user.email %> 
+      <br />
+      <%= link_to 'Show', comment %> 
+      <%= link_to 'Edit', edit_comment_path(comment) %> 
+      <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <hr />
+  <% end %>
+
+  <br />
+<% end %>
+<%= link_to 'New Comment', new_comment_path %>

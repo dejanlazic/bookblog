@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+crime:
+ id: 1
+ name: Crime
+
+thriller:
+ id: 2
+ name: Thriller

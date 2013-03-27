@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @book.title %>
+</p>
+
+<p>
+  <b>Authors:</b>
+  <%= @book.authors.collect{|author| author.name }.join(', ') %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @book.genre.name %>
+</p>
+
+<p>
+  <b>Review:</b> <br/>
+  <%= @book.review %>
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

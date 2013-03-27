@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title><%= @page_title || 'Bookblog' %></title>
+  <%= stylesheet_link_tag "style" %> <!-- assets/stylesheets/style.css -->
+</head>
+
+<body>
+
+<div id="menu">
+  <ul>
+    <li><a href="/authors">Authors</a>&nbsp;|&nbsp;</li>
+    <li><a href="/genres">Genres</a>&nbsp;|&nbsp;</li>
+    <li><a href="/books">Books</a>&nbsp;|&nbsp;</li>
+    <li><a href="/about">About</a>&nbsp;</li>
+  </ul>
+</div>
+
+
+<div id="content">
+  <h1><%= "#{@page_title}" if @page_title %></h1>
+
+  <% if flash[:notice] %>
+    <div id="notice">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+  
+  <div id="alert"><%= alert %></div>  
+</div>
+
+<% if user_signed_in? %>
+  <div>Signed in as... <%= current_user.email %> (<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>)</div>
+<% else %>
+  <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %>
+<% end %>
+
+
+<div id="footer">
+ &copy; 2013 Dejan Lazic
+</div>
+
+</body>
+</html>

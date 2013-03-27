@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+pro_rails_ecommerce:
+ id: 1
+ title: Pro Rails E-Commerce
+ genre_id: 1
+
+pro_rails_ecommerce_2:
+ id: 2
+ title: Pro Rails E-Commerce 2nd Edition
+ genre_id: 1
