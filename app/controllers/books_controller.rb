@@ -11,6 +11,11 @@ class BooksController < ApplicationController
     #@books = Book.all
     @books = Book.find(:all, :order => sort_by)
 
+    # Using my own titleizer gem
+    @books.each do |b|
+      b.title = Title.titleize(b.title)
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render :json => @books }

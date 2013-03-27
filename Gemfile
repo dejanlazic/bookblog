@@ -10,6 +10,9 @@ gem 'devise'
 
 gem 'json'
 
+# Using my own gem for the project
+gem 'titleizer', :git => 'git://github.com/dejanlazic/titleizer.git'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

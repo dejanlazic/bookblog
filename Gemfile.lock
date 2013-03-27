@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/dejanlazic/titleizer.git
+  revision: 1fbcb9e02d9b1e662cff125777e95aa834810e29
+  specs:
+    titleizer (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -123,4 +129,5 @@ DEPENDENCIES
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   sqlite3
+  titleizer!
   uglifier (>= 1.0.3)
