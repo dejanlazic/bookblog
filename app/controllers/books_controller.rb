@@ -7,11 +7,9 @@ class BooksController < ApplicationController
     @page_title = 'Listing books'
     
     sort_by = params[:sort_by]
-    #@book_pages, @books = paginate :books, :order => sort_by, :per_page => 2
-    #@books = Book.all
     @books = Book.find(:all, :order => sort_by)
 
-    # Using my own titleizer gem to convert title
+    # Using my titleizer gem to convert title
     @books.each do |b|
       b.title = Title.titleize(b.title)
     end

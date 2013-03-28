@@ -13,7 +13,6 @@
 
   <p><label for="comment_book">Book</label><br/>
   <%= collection_select :comment, :book_id, @books, :id, :title %></p>  
-  Book id: <%= session[:bookId] %>
   <div class="field">
     <%= f.label :user_id %><br />
     <%= f.number_field :user_id, :value => current_user.id, :readonly => true %>
@@ -22,6 +21,8 @@
     <%= f.label :text %><br />
     <%= f.text_area :text %>
   </div>
+
+  (Test - Book id: <%= session[:bookId] %>)
 
   <div class="actions">
     <%= f.submit %>
