@@ -83,7 +83,8 @@ a:hover { color: #fff; background-color:#000; }
 
 #menu ul li {
   margin: 0px;
-  padding-left padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   display: inline;
 }
 

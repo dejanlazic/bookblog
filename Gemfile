@@ -1,18 +1,29 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3'
+
 gem 'rails', '3.2.12'
+gem 'json'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
 gem 'devise'
 gem 'cancan'
-
-gem 'json'
+gem "heroku"
 
 # Using my own gem for the project
 gem 'titleizer', :git => 'git://github.com/dejanlazic/titleizer.git'
+
+# Use SQLite locally and PostgreSQL on Heroku
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
+
+# Use Webrick web server locally and Thin on Heroku
+group :production do
+  gem 'thin'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
