@@ -7,7 +7,8 @@ gem 'json'
 
 gem 'devise'
 gem 'cancan'
-gem "heroku"
+gem 'heroku'
+gem 'figaro'
 
 # Using my own gem for the project
 gem 'titleizer', :git => 'git://github.com/dejanlazic/titleizer.git'
@@ -17,7 +18,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg'
+  #gem 'pg'
+  gem 'sqlite3'
 end
 
 # Use Webrick web server locally and Thin on Heroku
